@@ -8,6 +8,10 @@ class PortsController < ApplicationController
     @portfolio_item = Port.new
   end
 
+  def show
+    @portfolio_item = Port.find(params[:id])
+  end
+
   def edit
     @portfolio_item = Port.find(params[:id])
   end
