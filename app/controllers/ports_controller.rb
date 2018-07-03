@@ -43,5 +43,14 @@ class PortsController < ApplicationController
     end
   end
 
+  def destroy
+    @portfolio_item = Port.find(params[:id])
+    @portfolio_item.destroy
+    respond_to do |format|
+      format.html { redirect_to ports_url, notice: 'item was successfully destroyed.' }
+
+    end
+  end
+
 
 end
