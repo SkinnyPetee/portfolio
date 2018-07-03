@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :ports
+  resources :ports 
 
   get 'about', to: 'pages#about'
   get 'contact', to: 'pages#contact'
