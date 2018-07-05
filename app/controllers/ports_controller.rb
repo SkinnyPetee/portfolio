@@ -6,6 +6,7 @@ class PortsController < ApplicationController
 
   def new
     @portfolio_item = Port.new
+    3.times { @portfolio_item.technologies.build }
   end
 
   def show
@@ -30,7 +31,8 @@ class PortsController < ApplicationController
   end
 
   def create
-    @portfolio_item = Port.new(params.require(:port).permit(:title,:subtitle, :body))
+    @portfolio_item = Port.new(params.require(:port).permit(:title,:subtitle, :body,
+      technologies_attributes: [:name]))
 
     respond_to do |format|
       if @portfolio_item.save
