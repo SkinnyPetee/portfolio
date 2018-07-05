@@ -32,6 +32,13 @@ end
   )
 end
 
+5.times do |x|
+  Port.last.technologies.create!(
+    name: "Tech #{x}"
+  )
+end
+
+
 1.times do |x|
   Port.create!(
     title: "Portfolio title #{x}",
